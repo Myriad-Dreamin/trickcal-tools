@@ -113,8 +113,8 @@ tab2Map.set('crit', critMap);
 tab2Map.set('hp', hpMap);
 tab2Map.set('crit-resist', critResistMap);
 tab2Map.set('defense', defenseMap);
-const saveData = (data: any = undefined) => {
-    for (const [key, map] of data || tab2Map.entries()) {
+const saveData = (data: Record<string, string[]> | undefined = undefined) => {
+    for (const [key, map] of (data === undefined ? tab2Map.entries() : Object.entries(data))) {
         localStorage.setItem(key, JSON.stringify(Array.from(map)));
     }
 }
@@ -139,10 +139,13 @@ summaryTableActionImport!.addEventListener('click', () => {
     const base64Decode = (encoded: string) => bytes2utf8.decode(base64DecodeToBytes(encoded));
     const tryParse = (encoded: string) => {
         try {
-            JSON.parse(base64Decode(encoded));
-            return true;
+            const data = JSON.parse(base64Decode(encoded));
+            if (typeof data !== 'object' || data === null) {
+                return '数据格式错误';
+            }
+            return '';
         } catch (error) {
-            return false;
+            return '请输入有效的数据（需要Base64编码的JSON数据）';
         }
     };
 
@@ -164,23 +167,12 @@ summaryTableActionImport!.addEventListener('click', () => {
     errorMessage.className = 'dialog-error-message';
     errorMessage.textContent = '';
     textarea.addEventListener('input', () => {
-        if (tryParse(textarea.value)) {
-            errorMessage.textContent = '';
-        } else {
-            errorMessage.textContent = '请输入有效的数据（需要Base64编码的JSON数据）';
-        }
+        const error = tryParse(textarea.value);
+        errorMessage.textContent = error;
     });
     const saveDataButton = document.createElement('button');
     saveDataButton.className = 'dialog-button';
     saveDataButton.textContent = '保存';
-    saveDataButton.addEventListener('click', () => {
-        if (tryParse(textarea.value)) {
-            saveData(JSON.parse(base64Decode(textarea.value)));
-        } else {
-            errorMessage.textContent = '请输入有效的数据（需要Base64编码的JSON数据）';
-            return;
-        }
-    });
     // float above and add close button
     const dialog = document.createElement('div');
     dialog.className = 'dialog';
@@ -192,6 +184,15 @@ summaryTableActionImport!.addEventListener('click', () => {
     dialog.appendChild(dialogContent);
     document.body.appendChild(dialog);
 
+    saveDataButton.addEventListener('click', () => {
+        const error = tryParse(textarea.value);
+        errorMessage.textContent = error;
+        if (error === '') {
+            saveData(JSON.parse(base64Decode(textarea.value)));
+            document.body.removeChild(dialog);
+            return;
+        }
+    });
     dialog.addEventListener('click', (event) => {
         if (event.target === dialog) {
             document.body.removeChild(dialog);
