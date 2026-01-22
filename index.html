@@ -9,6 +9,7 @@
     <style>
         /* dark mode */
         :root {
+            --site-font: "TrickcalCJK", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             --background-color: #121212;
             --text-color: #fff;
             --border-color: #fff;
@@ -26,6 +27,14 @@
             --personality-gloomy-bg: #a083e7;
         }
 
+        @font-face {
+            font-family: TrickcalCJK;
+            src: url(https://trickcal.nossite.com/assets/fonts/%E8%8D%86%E5%8D%97%E6%B3%A2%E6%B3%A2%E9%BB%91-BOLD.woff2) format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -33,8 +42,13 @@
         }
 
         body {
+            font-family: var(--site-font);
             background-color: var(--background-color);
             color: var(--text-color);
+        }
+
+        button {
+            font-family: var(--site-font);
         }
 
         #app {
@@ -277,6 +291,23 @@
                 bottom: 100px;
             }
         }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 
@@ -305,6 +336,16 @@
             <div id="summary-table-content"></div>
         </div>
     </div>
+    <!-- footer -->
+    <footer>
+        <p>
+            工具制作：<a href="https://github.com/Myriad-Dreamin" target="_blank">Myriad-Dreamin</a>
+            <a href="https://github.com/Myriad-Dreamin/trickcal-tools" target="_blank">GitHub</a>
+        </p>
+        <p>
+            基于<a href="https://trickcal.nossite.com/" target="_blank">Trickcal 工具集</a>改动
+        </p>
+    </footer>
 </body>
 
 </html>
