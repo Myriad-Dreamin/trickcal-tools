@@ -1,3 +1,4 @@
+const baseUrl = '/trickcal-tools';
 const personalityData: Record<string, string[]> = {
     "cool": [
         "皮可菈",
@@ -94,7 +95,7 @@ for (const [personality, characters] of Object.entries(personalityData)) {
     for (const character of characters) {
         characterMap.set(character, {
             name: character,
-            image: `/assets/characters/${character}.webp`,
+            image: `${baseUrl}/assets/characters/${character}.webp`,
             personality: personality,
         });
     }
