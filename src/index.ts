@@ -189,6 +189,7 @@ summaryTableActionImport!.addEventListener('click', () => {
         errorMessage.textContent = error;
         if (error === '') {
             saveData(JSON.parse(base64Decode(textarea.value)));
+            window.location.reload();
             document.body.removeChild(dialog);
             return;
         }
