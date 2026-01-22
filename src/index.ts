@@ -107,7 +107,7 @@ const hpMap = new Set<string>();
 const critResistMap = new Set<string>();
 const defenseMap = new Set<string>();
 const tab2Map = new Map<string, Set<string>>();
-tab2Map.set('all', ownedMap);
+tab2Map.set('owned', ownedMap);
 tab2Map.set('attack', attackMap);
 tab2Map.set('crit', critMap);
 tab2Map.set('hp', hpMap);
@@ -189,6 +189,7 @@ summaryTableActionImport!.addEventListener('click', () => {
         errorMessage.textContent = error;
         if (error === '') {
             saveData(JSON.parse(base64Decode(textarea.value)));
+            console.log('imported', JSON.parse(base64Decode(textarea.value)));
             window.location.reload();
             document.body.removeChild(dialog);
             return;
@@ -211,6 +212,7 @@ summaryTableActionExport!.addEventListener('click', () => {
         'crit-resist': Array.from(critResistMap),
         defense: Array.from(defenseMap),
     };
+    console.log('exported', data);
     navigator.clipboard.writeText(bytesBase64Encode(new TextEncoder().encode(JSON.stringify(data))));
     // show success message
     const successMessage = document.createElement('div');
