@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trickcal Tools</title>
+    <script type="module" src="/src/index.ts"></script>
+    <style>
+        /* dark mode */
+        :root {
+            --background-color: #121212;
+            --text-color: #fff;
+            --border-color: #fff;
+            --border-radius: 5px;
+            --overflow: hidden;
+            --primary-color: #ff5f72;
+            --primary-hover: #ff7a8a;
+            --error-color: #ff5f72;
+            --success-color: #51cf66;
+            --success-bg: rgba(81, 207, 102, .15);
+            --personality-cool-bg: #85daec;
+            --personality-mad-bg: #eb817f;
+            --personality-naive-bg: #85d775;
+            --personality-jolly-bg: #ebda56;
+            --personality-gloomy-bg: #a083e7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        #app {
+            padding: 20px;
+        }
+
+        .characters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .characters-item.personality-cool {
+            background-color: var(--personality-cool-bg);
+        }
+
+        .characters-item.personality-mad {
+            background-color: var(--personality-mad-bg);
+        }
+
+        .characters-item.personality-naive {
+            background-color: var(--personality-naive-bg);
+        }
+
+        .characters-item.personality-jolly {
+            background-color: var(--personality-jolly-bg);
+        }
+
+        .characters-item.personality-gloomy {
+            background-color: var(--personality-gloomy-bg);
+        }
+
+        .characters-item {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .characters-item.owned {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 5px #5b8ef480, 0 0 15px #5b8ef44d;
+            border-width: 3px;
+        }
+
+        .characters-item.activated {
+            border-color: var(--success-color);
+            box-shadow: 0 0 0 5px var(--success-bg), 0 0 15px var(--success-bg);
+            border-width: 3px;
+        }
+
+        .characters-item:not(.owned) {
+            opacity: 0.5;
+            filter: grayscale(0.6) brightness(0.7);
+        }
+
+        .characters-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .board-pagination,
+        .summary-table-action {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .board-pagination-item,
+        .summary-table-action-item {
+            padding: 10px 20px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        /* hover */
+        .board-pagination-item:hover,
+        .summary-table-action-item:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .board-pagination-item.active {
+            background-color: var(--primary-color);
+        }
+
+        /* #app 左右布局 */
+        #app {
+            display: flex;
+            gap: 20px;
+        }
+
+        #crayon-table {
+            flex: 1;
+        }
+
+        /* 200px 固定宽度 */
+        #summary-table {
+            flex: 0 0 400px;
+        }
+
+        .summary-table-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .summary-table-item-label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .summary-table-item-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .dialog-content {
+            margin: 0 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dialog-error-message {
+            color: var(--error-color);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* summary-table-action-import-textarea */
+        #summary-table-action-import-textarea {
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            color: #fff;
+            padding: 20px;
+        }
+
+        #summary-table-action-import-textarea:focus {
+            outline: none;
+        }
+
+        #summary-table-action-import-textarea:hover {
+            border: 1px solid var(--primary-color);
+        }
+
+        #summary-table-action-import-textarea:active {
+            border: 1px solid var(--primary-color);
+        }
+
+        .dialog-button {
+            background-color: var(--background-color);
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .dialog-button:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .dialog-button:active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+        }
+
+        /* dialog-message is popup and shown with transist animation */
+        .dialog-message {
+            position: absolute;
+            z-index: 1000;
+            right: 100px;
+            bottom: 100px;
+            width: fit-content;
+            height: fit-content;
+            background-color: var(--background-color);
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid var(--success-color);
+            animation: popup 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes popup {
+            0% {
+                bottom: -100px;
+            }
+
+            100% {
+                bottom: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="crayon-table">
+            <div id="crayon-table-switch" class="board-pagination">
+                <button id="crayon-table-switch-all" class="board-pagination-item active">所有</button>
+                <button id="crayon-table-switch-attack" class="board-pagination-item">攻击力</button>
+                <button id="crayon-table-switch-crit" class="board-pagination-item">暴击</button>
+                <button id="crayon-table-switch-hp" class="board-pagination-item">HP</button>
+                <button id="crayon-table-switch-crit-resist" class="board-pagination-item">暴击抵抗</button>
+                <button id="crayon-table-switch-defense" class="board-pagination-item">防御力</button>
+            </div>
+            <div id="crayon-table-content"></div>
+        </div>
+        <div id="summary-table">
+            <div class="summary-table-action">
+                <button id="summary-table-action-import" class="summary-table-action-item">导入</button>
+                <button id="summary-table-action-export" class="summary-table-action-item">导出</button>
+            </div>
+            <div id="summary-table-content"></div>
+        </div>
+    </div>
+</body>
+
+</html>
