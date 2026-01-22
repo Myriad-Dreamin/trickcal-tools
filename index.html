@@ -41,6 +41,22 @@
             padding: 20px;
         }
 
+        body,
+        #app {
+            overflow-y: scroll;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+        }
+
+        body::-webkit-scrollbar,
+        #app::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            /* Older Safari and Chromium */
+        }
+
         .characters {
             display: flex;
             flex-wrap: wrap;
@@ -109,6 +125,10 @@
             padding: 10px;
         }
 
+        .summary-table-action {
+            flex-wrap: wrap;
+        }
+
         .board-pagination-item,
         .summary-table-action-item {
             padding: 10px 20px;
@@ -119,6 +139,11 @@
             color: #fff;
         }
 
+        .flex-break {
+            height: 0;
+            flex-basis: 100%;
+        }
+
         /* hover */
         .board-pagination-item:hover,
         .summary-table-action-item:hover {
@@ -126,7 +151,8 @@
             color: #fff;
         }
 
-        .board-pagination-item.active {
+        .board-pagination-item.active,
+        .summary-table-action-item.active {
             background-color: var(--primary-color);
         }
 
@@ -271,6 +297,10 @@
             <div class="summary-table-action">
                 <button id="summary-table-action-import" class="summary-table-action-item">导入</button>
                 <button id="summary-table-action-export" class="summary-table-action-item">导出</button>
+                <div class="flex-break"></div>
+                <button id="summary-table-action-layer1" class="summary-table-action-item">一层</button>
+                <button id="summary-table-action-layer2" class="summary-table-action-item">二层</button>
+                <button id="summary-table-action-layer3" class="summary-table-action-item">三层</button>
             </div>
             <div id="summary-table-content"></div>
         </div>

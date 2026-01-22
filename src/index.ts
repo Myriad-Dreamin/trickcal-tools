@@ -74,18 +74,28 @@ const personalityData: Record<string, string[]> = {
 const crayonMap: Record<string, string[][]> = {
     '攻击力': [
         ['綾', '大木頭', '路易', '艾爾芬', '佩斯塔', '芙莉可', '加薇雅', '茱蜜', '馬爾', '瑪麗', '梅露娜', '桃桃', '米雪', '帕特拉', '謝蒂', '斯皮奇', '希拉', '泰達', '貝魯', '優米', '奶油', '希爾德', '艾琳娜', '莉茲'],
+        ['艾蜜莉雅', '綾', '大木頭', '康娜', '橋菲', '路易', '艾爾芬', '佩斯塔', '芙莉可', '加薇雅', '海莉', '伊弗利特', '傑德', '茱蜜', '基狄恩', '柯米', '雷吉', '馬爾', '瑪麗', '瑪約', '梅露娜', '桃桃', '米雪', '帕特拉', '皮可菈', '珀榭', '謝蒂', '斯皮奇', '希拉', '泰達', '貝魯', 'xX錫安Xx', '優米', '奶油', '希爾德', '艾琳娜', '莉茲'],
+        ['愛麗絲', '艾蜜莉雅', '綾', '貝麗塔', '班尼', '大木頭', '康娜', '庫洛艾', '橋菲', '路易', '艾爾芬', '佩斯塔', '芙莉可', '加薇雅', '海莉', '伊弗利特', '傑德', '茱蜜', '基狄恩', '柯米', '雷吉', '大師2號', '馬爾', '瑪麗', '瑪約', '梅露娜', '桃桃', '米雪', '帕特拉', '皮可菈', '珀榭', '路德', '莎莉', '謝蒂', '希菲爾', '斯皮奇', '希拉', '泰達', '貝魯', '薇薇', '劉美美', 'xX錫安Xx', '優米', '奶油', '希爾德', '艾琳娜', '莉茲', '布蘭切'],
     ],
     '暴击': [
         ['愛麗絲', '阿萊特', '貝麗塔', '班尼', '卡蓮', '庫洛艾', '蒂亞娜', '艾斯皮', '萊薇', '大師2號', '梅森', '琳', '路德', '盧波', '莎莉', '希菲爾', '希瑟圖', '羽伊', '佩佩', '薇薇', '劉美美', '艾皮卡', '布蘭切'],
+        ['愛麗絲', '阿萊特', '艾蜜莉雅', '貝麗塔', '班尼', '康娜', '卡蓮', '庫洛艾', '橋菲', '蒂亞娜', '艾斯皮', '海莉', '伊弗利特', '傑德', '基狄恩', '柯米', '雷吉', '萊薇', '大師2號', '梅森', '瑪約', '皮可菈', '珀榭', '琳', '路德', '盧波', '莎莉', '希菲爾', '希瑟圖', '羽伊', '佩佩', '薇薇', '劉美美', 'xX錫安Xx', '艾皮卡', '布蘭切'],
+        ['愛麗絲', '阿萊特', '綾', '貝麗塔', '班尼', '大木頭', '卡蓮', '庫洛艾', '路易', '蒂亞娜', '艾爾芬', '艾斯皮', '佩斯塔', '芙莉可', '加薇雅', '茱蜜', '萊薇', '大師2號', '馬爾', '梅森', '瑪麗', '梅露娜', '桃桃', '米雪', '帕特拉', '琳', '路德', '盧波', '莎莉', '謝蒂', '希菲爾', '希瑟圖', '斯皮奇', '希拉', '泰達', '羽伊', '佩佩', '貝魯', '薇薇', '劉美美', '優米', '奶油', '希爾德', '艾琳娜', '莉茲', '艾皮卡', '布蘭切'],
     ],
     'HP': [
         ['愛麗絲', '貝麗塔', '班尼', '大木頭', '庫洛艾', '路易', '芙莉可', '加薇雅', '大師2號', '馬爾', '瑪麗', '梅露娜', '桃桃', '米雪', '路德', '莎莉', '希菲爾', '希拉', '泰達', '薇薇', '劉美美', '希爾德', '莉茲', '布蘭切'],
+        ['阿萊特', '艾蜜莉雅', '綾', '康娜', '卡蓮', '橋菲', '蒂亞娜', '艾爾芬', '艾斯皮', '佩斯塔', '海莉', '伊弗利特', '傑德', '茱蜜', '基狄恩', '柯米', '雷吉', '萊薇', '梅森', '瑪約', '帕特拉', '皮可菈', '珀榭', '琳', '盧波', '謝蒂', '希瑟圖', '斯皮奇', '羽伊', '佩佩', '貝魯', 'xX錫安Xx', '優米', '奶油', '艾琳娜', '艾皮卡'],
+        ['愛麗絲', '阿萊特', '艾蜜莉雅', '綾', '貝麗塔', '班尼', '康娜', '卡蓮', '庫洛艾', '橋菲', '蒂亞娜', '艾爾芬', '艾斯皮', '佩斯塔', '海莉', '伊弗利特', '傑德', '茱蜜', '基狄恩', '柯米', '雷吉', '萊薇', '大師2號', '梅森', '瑪約', '帕特拉', '皮可菈', '珀榭', '琳', '路德', '盧波', '莎莉', '謝蒂', '希菲爾', '希瑟圖', '斯皮奇', '羽伊', '佩佩', '貝魯', '薇薇', '劉美美', 'xX錫安Xx', '優米', '奶油', '艾琳娜', '艾皮卡', '布蘭切']
     ],
     '暴击抵抗': [
         ['阿萊特', '艾蜜莉雅', '康娜', '卡蓮', '橋菲', '蒂亞娜', '艾斯皮', '海莉', '伊弗利特', '傑德', '基狄恩', '柯米', '雷吉', '萊薇', '梅森', '瑪約', '皮可菈', '珀榭', '琳', '盧波', '希瑟圖', '羽伊', '佩佩', 'xX錫安Xx', '艾皮卡'],
+        ['愛麗絲', '阿萊特', '貝麗塔', '班尼', '大木頭', '卡蓮', '庫洛艾', '路易', '蒂亞娜', '艾斯皮', '芙莉可', '加薇雅', '萊薇', '大師2號', '馬爾', '梅森', '瑪麗', '梅露娜', '桃桃', '米雪', '琳', '路德', '盧波', '莎莉', '希菲爾', '希瑟圖', '希拉', '泰達', '羽伊', '佩佩', '薇薇', '劉美美', '希爾德', '莉茲', '艾皮卡', '布蘭切'],
+        ['阿萊特', '艾蜜莉雅', '綾', '大木頭', '康娜', '卡蓮', '橋菲', '路易', '蒂亞娜', '艾爾芬', '艾斯皮', '佩斯塔', '芙莉可', '加薇雅', '海莉', '伊弗利特', '傑德', '茱蜜', '基狄恩', '柯米', '雷吉', '萊薇', '馬爾', '梅森', '瑪麗', '瑪約', '梅露娜', '桃桃', '米雪', '帕特拉', '皮可菈', '珀榭', '琳', '盧波', '謝蒂', '希瑟圖', '斯皮奇', '希拉', '泰達', '羽伊', '佩佩', '貝魯', 'xX錫安Xx', '優米', '奶油', '希爾德', '艾琳娜', '莉茲', '艾皮卡'],
     ],
     '防御力': [
         ['艾蜜莉雅', '綾', '康娜', '橋菲', '艾爾芬', '佩斯塔', '海莉', '伊弗利特', '傑德', '茱蜜', '基狄恩', '柯米', '雷吉', '瑪約', '帕特拉', '皮可菈', '珀榭', '謝蒂', '斯皮奇', '貝魯', 'xX錫安Xx', '優米', '奶油', '艾琳娜'],
+        ['愛麗絲', '綾', '貝麗塔', '班尼', '大木頭', '庫洛艾', '路易', '艾爾芬', '佩斯塔', '芙莉可', '加薇雅', '茱蜜', '大師2號', '馬爾', '瑪麗', '梅露娜', '桃桃', '米雪', '帕特拉', '路德', '莎莉', '謝蒂', '希菲爾', '斯皮奇', '希拉', '泰達', '貝魯', '薇薇', '劉美美', '優米', '奶油', '希爾德', '艾琳娜', '莉茲', '布蘭切'],
+        ['愛麗絲', '阿萊特', '艾蜜莉雅', '貝麗塔', '班尼', '大木頭', '康娜', '卡蓮', '庫洛艾', '橋菲', '路易', '蒂亞娜', '艾斯皮', '芙莉可', '加薇雅', '海莉', '伊弗利特', '傑德', '基狄恩', '柯米', '雷吉', '萊薇', '大師2號', '馬爾', '梅森', '瑪麗', '瑪約', '梅露娜', '桃桃', '米雪', '皮可菈', '珀榭', '琳', '路德', '盧波', '莎莉', '希菲爾', '希瑟圖', '希拉', '泰達', '羽伊', '佩佩', '薇薇', '劉美美', 'xX錫安Xx', '希爾德', '莉茲', '艾皮卡', '布蘭切']
     ],
 }
 const personalities = Object.keys(personalityData);
@@ -106,6 +116,16 @@ const critMap = new Set<string>();
 const hpMap = new Set<string>();
 const critResistMap = new Set<string>();
 const defenseMap = new Set<string>();
+const attack2Map = new Set<string>();
+const crit2Map = new Set<string>();
+const hp2Map = new Set<string>();
+const critResist2Map = new Set<string>();
+const defense2Map = new Set<string>();
+const attack3Map = new Set<string>();
+const crit3Map = new Set<string>();
+const hp3Map = new Set<string>();
+const critResist3Map = new Set<string>();
+const defense3Map = new Set<string>();
 const tab2Map = new Map<string, Set<string>>();
 tab2Map.set('owned', ownedMap);
 tab2Map.set('attack', attackMap);
@@ -113,15 +133,26 @@ tab2Map.set('crit', critMap);
 tab2Map.set('hp', hpMap);
 tab2Map.set('crit-resist', critResistMap);
 tab2Map.set('defense', defenseMap);
+tab2Map.set('attack2', attack2Map);
+tab2Map.set('crit2', crit2Map);
+tab2Map.set('hp2', hp2Map);
+tab2Map.set('crit-resist2', critResist2Map);
+tab2Map.set('defense2', defense2Map);
+tab2Map.set('attack3', attack3Map);
+tab2Map.set('crit3', crit3Map);
+tab2Map.set('hp3', hp3Map);
+tab2Map.set('crit-resist3', critResist3Map);
+tab2Map.set('defense3', defense3Map);
 const saveData = (data: Record<string, string[]> | undefined = undefined) => {
     for (const [key, map] of (data === undefined ? tab2Map.entries() : Object.entries(data))) {
         localStorage.setItem(key, JSON.stringify(Array.from(map)));
     }
 }
 const loadData = () => {
-    console.log('loadData');
+    let loaded: Record<string, any> = {};
     for (const [key, map] of tab2Map.entries()) {
         const data = localStorage.getItem(key);
+        loaded[key] = data;
         if (data) {
             map.clear();
             for (const item of JSON.parse(data)) {
@@ -129,6 +160,7 @@ const loadData = () => {
             }
         }
     }
+    console.log('loadData', loaded);
 }
 const summaryTableActionImport = document.getElementById('summary-table-action-import');
 const summaryTableActionExport = document.getElementById('summary-table-action-export');
@@ -211,6 +243,16 @@ summaryTableActionExport!.addEventListener('click', () => {
         hp: Array.from(hpMap),
         'crit-resist': Array.from(critResistMap),
         defense: Array.from(defenseMap),
+        attack2: Array.from(attack2Map),
+        crit2: Array.from(crit2Map),
+        hp2: Array.from(hp2Map),
+        'crit-resist2': Array.from(critResist2Map),
+        defense2: Array.from(defense2Map),
+        attack3: Array.from(attack3Map),
+        crit3: Array.from(crit3Map),
+        hp3: Array.from(hp3Map),
+        'crit-resist3': Array.from(critResist3Map),
+        defense3: Array.from(defense3Map),
     };
     console.log('exported', data);
     navigator.clipboard.writeText(bytesBase64Encode(new TextEncoder().encode(JSON.stringify(data))));
@@ -328,6 +370,8 @@ function updateSummary() {
 
     for (const key of ['attack', 'crit', 'hp', 'crit-resist', 'defense']) {
         const map = tab2Map.get(key)!;
+        const map2 = tab2Map.get(`${key}2`)!;
+        const map3 = tab2Map.get(`${key}3`)!;
         const humanReadable = humanReadableMap[key as keyof typeof humanReadableMap];
         const item = summaryTable!.appendChild(document.createElement('div'));
         item.className = `summary-table-item summary-table-item-${key}`;
@@ -336,11 +380,14 @@ function updateSummary() {
         itemLabel.textContent = `${humanReadable}`;
         const itemValue = item.appendChild(document.createElement('div'));
         itemValue.className = 'summary-table-item-value';
-        itemValue.textContent = `${map.size * 3}%`;
+        itemValue.textContent = `${(map.size * 3 + map2.size * 4 + map3.size * 5)}%`;
     }
 
     for (const key of ['attack', 'crit', 'hp', 'crit-resist', 'defense']) {
         const map = tab2Map.get(key)!;
+        const map2 = tab2Map.get(`${key}2`)!;
+        const map3 = tab2Map.get(`${key}3`)!;
+
         const humanReadable = humanReadableMap[key as keyof typeof humanReadableMap];
         const item = summaryTable!.appendChild(document.createElement('div'));
         item.className = `summary-table-item summary-table-item-${key}`;
@@ -350,6 +397,24 @@ function updateSummary() {
         const itemValue = item.appendChild(document.createElement('div'));
         itemValue.className = 'summary-table-item-value';
         itemValue.textContent = `${map.size} / ${crayonMap[humanReadable][0].length}`;
+
+        const item2 = summaryTable!.appendChild(document.createElement('div'));
+        item2.className = `summary-table-item summary-table-item-${key}2`;
+        const item2Label = item2.appendChild(document.createElement('div'));
+        item2Label.className = 'summary-table-item-label';
+        item2Label.textContent = `${humanReadable}（2层）`;
+        const item2Value = item2.appendChild(document.createElement('div'));
+        item2Value.className = 'summary-table-item-value';
+        item2Value.textContent = `${map2.size} / ${crayonMap[humanReadable][1].length}`;
+
+        const item3 = summaryTable!.appendChild(document.createElement('div'));
+        item3.className = `summary-table-item summary-table-item-${key}3`;
+        const item3Label = item3.appendChild(document.createElement('div'));
+        item3Label.className = 'summary-table-item-label';
+        item3Label.textContent = `${humanReadable}（3层）`;
+        const item3Value = item3.appendChild(document.createElement('div'));
+        item3Value.className = 'summary-table-item-value';
+        item3Value.textContent = `${map3.size} / ${crayonMap[humanReadable][2].length}`;
     }
 }
 
@@ -363,25 +428,50 @@ updateSummary();
 // crayon-table-switch
 const crayonTableSwitch = document.getElementById('crayon-table-switch');
 const crayonTableSwitchItems = crayonTableSwitch!.querySelectorAll('.board-pagination-item');
+const summaryTableActionLayer1 = document.getElementById('summary-table-action-layer1');
+const summaryTableActionLayer2 = document.getElementById('summary-table-action-layer2');
+const summaryTableActionLayer3 = document.getElementById('summary-table-action-layer3');
 crayonTableSwitchItems.forEach(item => {
     const key = item.id.split('-')[3];
     let selectedCharacters = characters;
+    let selected2Characters = characters;
+    let selected3Characters = characters;
     let feature = allFeature;
+    let feature2 = allFeature;
+    let feature3 = allFeature;
     if (key === 'attack') {
-        selectedCharacters = crayonMap['攻击力'].flat();
+        selectedCharacters = crayonMap['攻击力'][0];
+        selected2Characters = crayonMap['攻击力'][1];
+        selected3Characters = crayonMap['攻击力'][2];
         feature = crayonFeature('attack');
+        feature2 = crayonFeature('attack2');
+        feature3 = crayonFeature('attack3');
     } else if (key === 'crit') {
-        selectedCharacters = crayonMap['暴击'].flat();
+        selectedCharacters = crayonMap['暴击'][0];
+        selected2Characters = crayonMap['暴击'][1];
+        selected3Characters = crayonMap['暴击'][2];
         feature = crayonFeature('crit');
+        feature2 = crayonFeature('crit2');
     } else if (key === 'hp') {
-        selectedCharacters = crayonMap['HP'].flat();
+        selectedCharacters = crayonMap['HP'][0];
+        selected2Characters = crayonMap['HP'][1];
+        selected3Characters = crayonMap['HP'][2];
         feature = crayonFeature('hp');
+        feature2 = crayonFeature('hp2');
     } else if (key === 'crit-resist') {
-        selectedCharacters = crayonMap['暴击抵抗'].flat();
+        selectedCharacters = crayonMap['暴击抵抗'][0];
+        selected2Characters = crayonMap['暴击抵抗'][1];
+        selected3Characters = crayonMap['暴击抵抗'][2];
         feature = crayonFeature('crit-resist');
+        feature2 = crayonFeature('crit-resist2');
+        feature3 = crayonFeature('crit-resist3');
     } else if (key === 'defense') {
-        selectedCharacters = crayonMap['防御力'].flat();
+        selectedCharacters = crayonMap['防御力'][0];
+        selected2Characters = crayonMap['防御力'][1];
+        selected3Characters = crayonMap['防御力'][2];
         feature = crayonFeature('defense');
+        feature2 = crayonFeature('defense2');
+        feature3 = crayonFeature('defense3');
     } else if (key === 'all') {
         selectedCharacters = characters;
         feature = allFeature;
@@ -395,5 +485,40 @@ crayonTableSwitchItems.forEach(item => {
         item.classList.add('active');
         crayonTableContent!.innerHTML = '';
         crayonTableContent!.appendChild(createCharactersTable(selectedCharacters.map(c => characterMap.get(c)!), feature));
+
+        if (['attack', 'crit', 'hp', 'crit-resist', 'defense'].includes(key)) {
+            summaryTableActionLayer1!.classList.add('active');
+            summaryTableActionLayer2!.classList.remove('active');
+            summaryTableActionLayer3!.classList.remove('active');
+
+            summaryTableActionLayer1!.addEventListener('click', () => {
+                summaryTableActionLayer1!.classList.add('active');
+                summaryTableActionLayer2!.classList.remove('active');
+                summaryTableActionLayer3!.classList.remove('active');
+                currentTab = 'all';
+                crayonTableContent!.innerHTML = '';
+                crayonTableContent!.appendChild(createCharactersTable(selectedCharacters.map(c => characterMap.get(c)!), feature));
+            });
+            summaryTableActionLayer2!.addEventListener('click', () => {
+                summaryTableActionLayer1!.classList.remove('active');
+                summaryTableActionLayer2!.classList.add('active');
+                summaryTableActionLayer3!.classList.remove('active');
+                currentTab = 'all';
+                crayonTableContent!.innerHTML = '';
+                crayonTableContent!.appendChild(createCharactersTable(selected2Characters.map(c => characterMap.get(c)!), feature2));
+            });
+            summaryTableActionLayer3!.addEventListener('click', () => {
+                summaryTableActionLayer1!.classList.remove('active');
+                summaryTableActionLayer2!.classList.remove('active');
+                summaryTableActionLayer3!.classList.add('active');
+                currentTab = 'all';
+                crayonTableContent!.innerHTML = '';
+                crayonTableContent!.appendChild(createCharactersTable(selected3Characters.map(c => characterMap.get(c)!), feature3));
+            });
+        } else {
+            summaryTableActionLayer1!.classList.remove('active');
+            summaryTableActionLayer2!.classList.remove('active');
+            summaryTableActionLayer3!.classList.remove('active');
+        }
     });
 });
